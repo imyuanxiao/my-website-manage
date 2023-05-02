@@ -2,42 +2,52 @@
 
 <div class="app_left_part">
 
-
   <el-menu
-      default-active="2"
-      class="el-menu-vertical-demo"
+      default-active="/"
+      class="el_menu_vertical"
       :collapse="isCollapse"
+      :router="true"
+      background-color="#041230"
+      text-color="#ffffff"
+      active-text-color="#e3872d"
+      style="border: none"
   >
-
-<!--    <el-button @click="toggleCollapse" >{{ isCollapse ? '>>' : '<<' }}</el-button>-->
-
-    <el-menu-item index="1">
-      <el-icon><document /></el-icon>
-      <template #title>Home Page</template>
+    <el-menu-item index="/">
+      <el-icon><document/></el-icon>
+      <template #title>
+        <span>HomePage</span>
+      </template>
     </el-menu-item>
 
-    <el-sub-menu index="2">
-      <template #title>
+    <el-sub-menu>
+      <template #title class="title_holder">
         <el-icon><location /></el-icon>
-        <span>Moudle</span>
+        <span>Module</span>
       </template>
-      <el-menu-item-group>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-        <el-menu-item index="1-3">item three</el-menu-item>
-        <el-menu-item index="1-4">item Four</el-menu-item>
-      </el-menu-item-group>
+      <div  class="el-sub-menu">
+        <el-menu-item index="/module/about">
+          <el-icon ><document /></el-icon>
+          <span>About</span>
+        </el-menu-item>
+        <el-menu-item index="/module/service">
+          <el-icon><document /></el-icon>
+          <span>Service</span>
+        </el-menu-item>
+        <el-menu-item index="/module/contact">
+          <el-icon><document /></el-icon>
+          <span>Contact</span>
+        </el-menu-item>
+      </div>
     </el-sub-menu>
 
-    <el-menu-item index="3">
+    <el-menu-item index="/article">
       <el-icon><icon-menu /></el-icon>
-      <template #title>Article</template>
+      <template #title>
+        <span>Article</span>
+      </template>
     </el-menu-item>
 
-    <el-menu-item index="4">
-      <el-icon><setting /></el-icon>
-      <template #title>Setting</template>
-    </el-menu-item>
+
   </el-menu>
 </div>
 
@@ -68,14 +78,19 @@ import {
 
 <style scoped>
 
-.el-menu-vertical-demo:not(.el-menu--collapse) {
+
+.el-sub-menu{
+  background-color: #041844;
+}
+
+.el_menu_vertical:not(.el-menu--collapse) {
   position: fixed;
   width: 200px;
   height: 100vh;
 }
-.el-menu-vertical-demo.el-menu--collapse{
+.el_menu_vertical.el-menu--collapse{
   position: fixed;
-  width: 60px;
+  width: 65px;
   height: 100vh;
 }
 </style>

@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-
+import store from '../store'
 import Login from "views/Login.vue";
 import DashBoard from "views/Home/DashBoard.vue";
 import Article from "views/Home/Article.vue";
-import store from '../store'
+import About from "views/Home/Module/About.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -20,6 +20,17 @@ const routes: Array<RouteRecordRaw> = [
         path: '/article',
         name: "Article",
         component: Article,
+    },
+    {
+        path: '/module',
+        name: "Module",
+        children: [
+            {
+                path: 'about',
+                name: "About",
+                component: About,
+            },
+        ]
     },
 ];
 

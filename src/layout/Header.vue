@@ -1,14 +1,19 @@
 <template>
   <el-row class="header">
     <el-col :span="2">
-
-      <el-button @click="toggleFold" >{{ isFold ? '<<' : '>>' }}</el-button>
-
+      <el-button
+          style="border:none;background-color: #e3872d; color: #041844;"
+          @click="toggleFold" >{{ isFold ? '<<' : '>>' }}</el-button>
     </el-col>
-    <el-col :span="2">
-      <a>首页</a>
+    <el-col :span="14">
+      <el-row class="breadcrumb">
+        <el-breadcrumb :separator-icon="ArrowRight">
+          <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item>
+          <el-breadcrumb-item>promotion</el-breadcrumb-item>
+        </el-breadcrumb>
+      </el-row>
     </el-col>
-    <el-col class="header_right" :span="18">
+    <el-col class="header_right" :span="6">
       <el-button :icon="Search" circle />
       <el-button :icon="Message" circle />
     </el-col>
@@ -16,15 +21,11 @@
       <el-avatar :icon="UserFilled" />
     </el-col>
   </el-row>
-
-  <el-row class="breadcrumb">
-    <el-breadcrumb :separator-icon="ArrowRight">
-      <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item>
-      <el-breadcrumb-item>promotion management</el-breadcrumb-item>
-      <el-breadcrumb-item>promotion list</el-breadcrumb-item>
-      <el-breadcrumb-item>promotion detail</el-breadcrumb-item>
-    </el-breadcrumb>
+  <el-row>
+    显示打开模块
   </el-row>
+
+
 
 </template>
 
@@ -58,11 +59,10 @@ const onBack = () => {
 
 <style scoped>
 .header{
-  margin-top: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 50px;
+  padding: 5px 10px;
+  height: 55px;
   align-items: center;
+  background-color: #041844;
 }
 .header_right{
   text-align: right;

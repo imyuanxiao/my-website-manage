@@ -32,14 +32,19 @@ export default {
 </script>
 
 <style scoped>
+
+.layout{
+  background-color: #041230;
+}
+
 .content{
-  margin-left: 60px;
+  margin-left: 65px;
   transition: margin 0.4s;
 }
 
 .content.opened{
   margin-left: 200px;
-  transition: margin 0.4s;
+  transition: margin 0.5s;
 }
 
 .header{
